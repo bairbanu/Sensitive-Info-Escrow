@@ -1,10 +1,10 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.18;
 
 contract ReceiverStorage {
     address private receiver;
     string private infoReceived;
     
-    constructor() internal {
+    function ReceiverStorage() internal {
         receiver = msg.sender;
     }
     

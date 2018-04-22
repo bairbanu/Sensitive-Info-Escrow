@@ -1,10 +1,10 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.18;
 
 contract SenderStorage {
     address private sender;
     string private coldTransaction;
     
-    constructor() internal {
+    function SenderStorage() internal {
         sender = msg.sender;
     }
 
