@@ -1,0 +1,25 @@
+{
+  "name": "Sensitive-Info-Escrow",
+  "version": "1.0.0",
+  "description": "A sensitive escrow prototype with Ethereum blockchain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zubairnahmed/Sensitive-Info-Escrow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zubairnahmed/Sensitive-Info-Escrow/issues"
+  },
+  "homepage": "https://github.com/zubairnahmed/Sensitive-Info-Escrow#readme",
+  "dependencies": {
+    "eth-crypto": "^1.1.0",
+    "ganache-cli": "^6.1.0",
+    "web3": "^1.0.0-beta.34"
+  }
+}
