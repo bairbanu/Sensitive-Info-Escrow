@@ -4,7 +4,8 @@
   "description": "A sensitive escrow prototype with Ethereum blockchain.",
   "main": "index.js",
   "scripts": {
-    "compile": "node ./Ethereum/compileSender.js && ./Ethereum/compileReceiver.js",
+    "build:smartcontracts": "node ./Ethereum/compileAndDeploy.js",
+    "init:blockchain": "ganache-cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
