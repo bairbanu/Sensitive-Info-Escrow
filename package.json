@@ -1,29 +1,23 @@
 {
-  "name": "Sensitive-Info-Escrow",
-  "version": "1.0.0",
-  "description": "A sensitive escrow prototype with Ethereum blockchain.",
-  "main": "index.js",
-  "scripts": {
-    "build:smartcontracts": "node ./Ethereum/compileAndDeploy.js",
-    "init:blockchain": "ganache-cli",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zubairnahmed/Sensitive-Info-Escrow.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zubairnahmed/Sensitive-Info-Escrow/issues"
-  },
-  "homepage": "https://github.com/zubairnahmed/Sensitive-Info-Escrow#readme",
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "eth-crypto": "^1.1.0",
     "fs-extra": "^5.0.0",
     "ganache-cli": "^6.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4",
     "solc": "^0.4.23",
     "web3": "^1.0.0-beta.34"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "init:blockchain": "ganache-cli",
+    "setup:contracts": "./ethereum/compileAndDeploy"
   }
 }

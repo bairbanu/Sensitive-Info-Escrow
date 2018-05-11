@@ -35,23 +35,23 @@ async function deploy() {
 	const compiledContracts = compile()
 	const { receiverStorage, senderStorage } = compiledContracts
 
-	const { interface: receiverInterface, bytecode: receiverBytecode } = receiverStorage
-	const { interface: senderInterface, bytecode: senderBytecode } = senderStorage
+	const { interface: receiverABI, bytecode: receiverBytecode } = receiverStorage
+	const { interface: senderABI, bytecode: senderBytecode } = senderStorage
 	
 	const accounts = await web3.eth.getAccounts()
 
-	const senderInstance = await new web3.eth.Contract(JSON.parse(senderInterface))
+	const senderInstance = await new web3.eth.Contract(JSON.parse(senderABI))
 		.deploy({ data: senderBytecode })
 		.send({ from: accounts[0], gas: '1000000' })
 
-	const receiverInstance = await new web3.eth.Contract(JSON.parse(receiverInterface))
+	const receiverInstance = await new web3.eth.Contract(JSON.parse(receiverABI))
 		.deploy({ data: receiverBytecode })
 		.send({ from: accounts[1], gas: '1000000'})
 
 	return {
-		receiverInterface,
+		receiverABI,
 		receiverAddress: receiverInstance._address,
-		senderInterface,
+		senderABI,
 		senderAddress: senderInstance._address,
 	}	
 }
