@@ -6,9 +6,6 @@ const Web3 = require('web3')
 const web3 = new Web3('http://localhost:8545')
 
 function compile() {
-	const buildPath = path.resolve(__dirname, 'build')
-	fs.removeSync(buildPath)
-
 	const handOffContractPath = path.resolve(
 		__dirname,
 		'contracts',
@@ -48,12 +45,16 @@ async function deploy() {
 		.deploy({ data: receiverBytecode })
 		.send({ from: accounts[1], gas: '1000000'})
 
-	return {
+	const contractInfo = {
 		receiverABI,
 		receiverAddress: receiverInstance._address,
 		senderABI,
 		senderAddress: senderInstance._address,
-	}	
+	}
+
+	const contractJson = JSON.stringify(contractInfo)
+
+	fs.writeFileSync(path.resolve(__dirname, 'contractInfo.json'), contractJson, 'utf8')
 }
 
-export default deploy
+deploy()
