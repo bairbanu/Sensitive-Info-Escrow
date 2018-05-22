@@ -54,6 +54,7 @@ async function deploy() {
 
 	const contractJson = JSON.stringify(contractInfo)
 
+	// delete the local file first or refresh to test if it's working
 	fs.writeFileSync(path.resolve(__dirname, 'contractInfo.json'), contractJson, 'utf8')
 }
 
